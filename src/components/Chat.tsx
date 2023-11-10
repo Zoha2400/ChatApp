@@ -1,3 +1,5 @@
+import ChatDisplay from "./ChatDisplay";
+
 function Chat() {
   return (
     <div className="chat w-96 h-auto bg-stone-900 p-5 rounded-lg">
@@ -11,14 +13,12 @@ function Chat() {
           <span className="p-1 bg-purple-500 rounded-md">x656sadjkWijsd</span>
         </p>
       </div>
-      <div className="chat-disp w-full h-96 rounded-md bg-stone-950 relative">
-        <p className="absolute w-full h-full flex justify-center items-center text-3xl font-extrabold opacity-25">
-          Chat
-        </p>
-      </div>
+
+      <ChatDisplay />
+
       <div className="flex items-end justify-center mt-2 gap-2 flex-col">
         <textarea
-          className=" resize-none h-16 outline-none border rounded-xl p-1 w-full bg-stone-950 text-xs"
+          className=" resize-none h-16 outline-none border rounded-xl p-2 w-full bg-stone-950 text-xs"
           name="message"
           placeholder="Type a message"
           id="msg"
