@@ -1,4 +1,4 @@
-import messageProps from "../MessageProps";
+import messageProps from "../Entities/MessageProps";
 function Message(props: messageProps) {
   const dateStyle = {
     fontSize: "10px",
@@ -11,7 +11,7 @@ function Message(props: messageProps) {
       }`}
     >
       <div className="w-10/12 bg-stone-800 rounded-lg p-2 text-xs relative">
-        <p className="text">{props.value.text}</p>
+        <p className="text break-words">{props.value.text}</p>
       </div>
       <p className="mt-1 mr-1 ml-1 italic text-gray-500" style={dateStyle}>
         {props.value.date.toString()}
