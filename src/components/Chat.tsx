@@ -1,6 +1,27 @@
 import ChatDisplay from "./ChatDisplay";
+import io from "socket.io-client";
+
+// const socket = io.connect("http://localhost:3000/");
+
+import { useEffect } from "react";
 
 function Chat() {
+  useEffect(() => {
+    const socket = io("http://localhost:3000/");
+
+    socket.on("connect", () => {
+      console.log("Connected to server");
+    });
+
+    socket.on("disconnect", () => {
+      console.log("Disconnected from server");
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
   return (
     <div className="chat w-96 h-auto bg-stone-900 p-5 rounded-lg">
       <div className="info flex flex-col gap-3 mb-4 text-xs">
